@@ -12,14 +12,14 @@ Trip Schema:
 const tripSchema = new mongoose.Schema({
   destination: { type: String, required: true },
   image: { type: String },
-  iteneraries: [itenerarySchema],
+  itineraries: [itenerarySchema],
 });
 ```
 
-Itenerary Schema:
+Itinerary Schema:
 
 ```js
-const itenerarySchema = new.mongoose.Schema({
+const itinerarySchema = new.mongoose.Schema({
     date: { type: String },
     duration: { type: String },
     budgets: [ budgetSchema ],
