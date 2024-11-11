@@ -11,6 +11,7 @@ Trip Schema:
 ```js
 const tripSchema = new mongoose.Schema({
   destination: { type: String, required: true },
+  image: { type: String },
   iteneraries: [itenerarySchema],
 });
 ```
