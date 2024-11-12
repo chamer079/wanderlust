@@ -12,7 +12,7 @@ Trip Schema:
 const tripSchema = new mongoose.Schema({
   destination: { type: String, required: true },
   image: { type: String },
-  itineraries: [itenerarySchema],
+  itineraries: [itinerarySchema],
 });
 ```
 
@@ -23,8 +23,6 @@ const itinerarySchema = new.mongoose.Schema({
     date: { type: String },
     duration: { type: String },
     budgets: [ budgetSchema ],
-    transportations: [ travelSchema ],
-    lodgingAccomendations: [ lodgingAccomendationSchema ],
     todoLists: [ todoListSchema ],
 })
 ```
@@ -43,40 +41,12 @@ const budgetSchema = new.mongoose.Schema({
 })
 ```
 
-Transportation Schema :
-
-```js
-const travelSchema = new.mongoose.Schema({
-    transportation: { type: String },
-    location: { type: String },
-    date: { type: String },
-    time: { type: string },
-    confirmationNumber: { type: String },
-})
-```
-
-Lodging Accomedation Schema:
-
-```js
-const lodgingAccomedationSchema = new.mongoose.Schema({
-    establishmentName: { type: String },
-    location: { type: String },
-    checkInDate: { type: String },
-    checkInTime: { type: Sting },
-    checkOutDate: { type: String },
-    checkOutTime: { type: String },
-    address: { type: String },
-    phoneNumber: { type: String },
-    confirmationNumber: { type: String },
-})
-```
-
 Todo List Schema:
 
 ```js
 const todoListSchema = new.mongoose.Schema({
     sight: { type: String },
     activity: { type: String },
-    fodo: { type: String },
+    food: { type: String },
 })
 ```
