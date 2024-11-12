@@ -1,5 +1,9 @@
 # Planning Stages
 
+## User Stories
+
+TBD
+
 ## Steps/Trello
 
 [To-Do list for this project](https://trello.com/invite/b/673159d4d10c1cd4ca747c21/ATTI19913babf3e89afe7a5920f3f5636a7185CCF71C/wanderlust)

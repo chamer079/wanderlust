@@ -12,6 +12,10 @@ Wanderlust is a trip planning app. The user will be able to set a budget. Create
 
 TBD
 
+## Back-End Link
+
+[Wanderlust back-end repo link.](https://github.com/chamer079/wanderlust-back-end)
+
 ## Wireframe
 
 [Here's a sneak peak of what the app will look like...](https://www.figma.com/design/sR7bEeI56CM74NfEa3B0ys/Wanderlust?node-id=0-1&t=CEXednMG5GKpGF0T-1)
