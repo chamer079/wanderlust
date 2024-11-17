@@ -3,8 +3,7 @@ import { useState, useEffect } from "react"
 import { Routes, Route } from "react-router-dom"
 
 import TripList from "./components/TripList/TripList"
-import TripDetails from "./components/TripDetails"
-
+import TripDetails from "./components/TripDetails/TripDetails"
 
 const App = () => {
   const [trips, setTrips] = useState([])
@@ -23,7 +22,7 @@ const App = () => {
     <h1>Sanity Check (App.jsx)</h1>
     <Routes>
       <Route path="/trips" element={<TripList trips={trips} />}/>
-      <Route path="/trips/:id" element={<TripDetails />} />
+      <Route path="/trips/:tripId" element={<TripDetails />} />
     </Routes>
     </>
   )

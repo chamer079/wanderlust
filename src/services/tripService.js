@@ -14,7 +14,15 @@ const index = async () => {
 
 
 // Read/Show 1 - GET
+const show = async (tripId) => {
+    try {
+        const res = await fetch(`${BASE_URL}/${tripId}`)
 
+        return res.json()
+    }catch (error) {
+        console.log(error)
+    }
+}
 
 
 // Create - POST
@@ -31,5 +39,6 @@ const index = async () => {
 
 
 export {
-    index
+    index,
+    show
 }
