@@ -11,11 +11,7 @@ const TripForm = (props) => {
         shoppingBudget: "",
         entertainmentBudget: "",
         emergencyBudget: ""
-        // itineraries: [{
-        //     sight: "",
-        //     activity: "",
-        //     food: "",
-        // }]
+        
     })
     // console.log(formData)
 
@@ -39,7 +35,7 @@ const TripForm = (props) => {
                         type="text"
                         name="destination"
                         id="destination-input"
-                        value={formData.destination}
+                        value={setFormData.destination}
                         onChange={handleChange}
                     
                     />
@@ -48,7 +44,7 @@ const TripForm = (props) => {
                         type="text"
                         name="image"
                         id="image-input"
-                        value={formData.image}
+                        value={setFormData.image}
                         onChange={handleChange}
                        
                     />
@@ -60,7 +56,7 @@ const TripForm = (props) => {
                             type="text"
                             name="date"
                             id="date-input"
-                            value={formData.date}
+                            value={setFormData.date}
                             onChange={handleChange}
                         />
                         <label htmlFor="duration-input">Duration:</label>
@@ -68,7 +64,7 @@ const TripForm = (props) => {
                             type="text"
                             name="duration"
                             id="dutation-input"
-                            value={formData.duration}
+                            value={setFormData.duration}
                             onChange={handleChange}
                         />
                     </article>
@@ -79,7 +75,7 @@ const TripForm = (props) => {
                             type="number"
                             name="accomendationBudget"
                             id="accomendationBudget-input"
-                            value={formData.accomendationBudget}
+                            value={setFormData.accomendationBudget}
                             onChange={handleChange}
                         />
                         <label htmlFor="shoppingBudget-input">Shopping Budget:</label>
@@ -87,7 +83,7 @@ const TripForm = (props) => {
                             type="number"
                             name="shoppingBudget"
                             id="shoppingbudget-input"
-                            value={formData.shoppingBudget}
+                            value={setFormData.shoppingBudget}
                             onChange={handleChange}
                         />
                          <label htmlFor="entertainmentBudget-input">Entertainment Budget:</label>
@@ -95,7 +91,7 @@ const TripForm = (props) => {
                             type="number"
                             name="entertainmentBudget"
                             id="entertainmentBudget-input"
-                            value={formData.entertainmentBudget}
+                            value={setFormData.entertainmentBudget}
                             onChange={handleChange}
                         />
                          <label htmlFor="emergencyBudget-input">Emergency Budget:</label>
@@ -103,7 +99,7 @@ const TripForm = (props) => {
                             type="number"
                             name="emergencyBudget"
                             id="emergencyBudget-input"
-                            value={formData.emergencyBudget}
+                            value={setFormData.emergencyBudget}
                             onChange={handleChange}
                         />
                     </article>
