@@ -10,12 +10,12 @@ const TripForm = (props) => {
         accomendationBudget: "",
         shoppingBudget: "",
         entertainmentBudget: "",
-        emergencyBudget: "",
-        itineraries: [{
-            sight: "",
-            activity: "",
-            food: "",
-        }]
+        emergencyBudget: ""
+        // itineraries: [{
+        //     sight: "",
+        //     activity: "",
+        //     food: "",
+        // }]
     })
     // console.log(formData)
 
@@ -41,7 +41,7 @@ const TripForm = (props) => {
                         id="destination-input"
                         value={formData.destination}
                         onChange={handleChange}
-                        required
+                    
                     />
                     <label htmlFor="image-input">Image:</label>
                     <input 
@@ -50,7 +50,7 @@ const TripForm = (props) => {
                         id="image-input"
                         value={formData.image}
                         onChange={handleChange}
-                        required
+                       
                     />
                 </section>
                 <section className="DateBudget">
@@ -108,7 +108,8 @@ const TripForm = (props) => {
                         />
                     </article>
                 </section>
-                <section className="todoList">
+                {/* <section className="todoList">
+                    <h3>Things to See, Do, & Eat:</h3>
                     <article className="sightsList">
                         <label htmlFor="sight-input">Sights:</label>
                         <textarea 
@@ -145,8 +146,8 @@ const TripForm = (props) => {
                             onChange={handleChange}
                         />
                     </article>
+                    </section> */}
                     <button type="submit">Submit</button>
-                </section>
             </form>
         </>
     )
