@@ -11,12 +11,12 @@ const TripDetails = () => {
   useEffect(() => {
     const fetchTrip = async () => {
       const tripData = await tripService.show(tripId);
-      console.log("tipData:", tripData);
+    //   console.log("tipData:", tripData);
       setTrip(tripData);
     };
     fetchTrip();
   }, [tripId]);
-  console.log("trip state:", trip);
+//   console.log("trip state:", trip);
 
   if (!trip) {
     return <h1>Loading...</h1>;
@@ -25,8 +25,8 @@ const TripDetails = () => {
   const imgStyle = {
     width: "98vw",
     height: "400px",
-    border: "3px solid red"
-  }
+    border: "3px solid red",
+  };
 
   return (
     <>
@@ -36,34 +36,45 @@ const TripDetails = () => {
       </header>
       <section className="timeAndMoney">
         <article className="dateDuration">
-            {!trip.date ? <h2>Add a Date</h2> : <h2>Date: {trip.date}</h2>}
-            {!trip.duration ? <h2>Add the Duration of the Trip.</h2> : <h2>Druation: {trip.duration}</h2>}
+          {!trip.date ? <h2>Add a Date</h2> : <h2>Date: {trip.date}</h2>}
+          {!trip.duration ? (
+            <h2>Add the Duration of the Trip.</h2>
+          ) : (
+            <h2>Druation: {trip.duration}</h2>
+          )}
         </article>
-        {/* <article className="budget">
-            <h2>{{tips.}Budget: {}}</h2>
-            <p>Accomendations: {trip.budgets.a}</p>
-        </article> */}
+        <article className="budget">
+            <h2>Budget: $</h2>
+            <p>Accomendations: ${!trip.acommendationBudget ? 0 : trip.acommendationBudget}</p>
+            <p>Shopping: ${!trip.shoppingBudget ? 0 : trip.shoppingBudget}</p>
+            <p>Entertainment: ${!trip.entertainmentBudget ? 0 : trip.entertainmentBudget}</p>
+            <p>Emergency: ${!trip.emergencyBudget ? 0 : trip.emergencyBudget}</p>
+        </article>
       </section>
       <section className="todoList">
         <h2>Things to See, Do, & Eat:</h2>
-        <article className="sights">
-            <h3>Sights:</h3>
-            <ul>
-
-            </ul>
-        </article>
-        <article className="activities">
-        <h3>Activities:</h3>
-            <ul>
-
-            </ul>
-        </article>
-        <article className="food">
-        <h3>Food:</h3>
-            <ul>
-
-            </ul>
-        </article>
+        {trip.itineraries.map((itinerary) => (
+          <>
+            <article key={itinerary._id} className="sights">
+              <h3>Sights:</h3>
+              <ul>
+                {!itinerary.sight ? <p>Add Sights to See</p> : <li>{itinerary.sight}</li>}
+              </ul>
+            </article>
+            <article className="activities">
+              <h3>Activities:</h3>
+              <ul>
+                {!itinerary.activity ? <p>Add Things to Do</p> : <li>{itinerary.activity}</li>}
+              </ul>
+            </article>
+            <article className="food">
+              <h3>Food:</h3>
+              <ul>
+                {!itinerary.food ? <p>Add Food to Eat</p> : <li>{itinerary.food}</li>}
+              </ul>
+            </article>
+          </>
+        ))}
       </section>
     </>
   );
