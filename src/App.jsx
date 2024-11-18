@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom"
 
 import TripList from "./components/TripList/TripList"
 import TripDetails from "./components/TripDetails/TripDetails"
+import TripForm from "./components/TripForm/TripForm"
 
 const App = () => {
   const [trips, setTrips] = useState([])
@@ -23,6 +24,7 @@ const App = () => {
     <Routes>
       <Route path="/trips" element={<TripList trips={trips} />}/>
       <Route path="/trips/:tripId" element={<TripDetails />} />
+      <Route path="/trips/new" element={<TripForm />} />
     </Routes>
     </>
   )
