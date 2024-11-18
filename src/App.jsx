@@ -21,6 +21,8 @@ const App = () => {
 
   const handleAddTrip = async (tripFormData) => {
     console.log("tripFormData: ", tripFormData)
+    const newTrip = await tripService.create(tripFormData)
+    setTrips([newTrip, ...trips])
     navigate("/trips")
   }
 

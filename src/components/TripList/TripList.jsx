@@ -16,7 +16,7 @@ const TripList = (props) => {
             <article>
               <img src={trip.image} alt={trip.destination} />
               <h2>{trip.destination}</h2>
-              {!trip.date ? <h3>TBD</h3> : <h3>{trip.date}</h3>}
+              {!trip.date ? <h3>Date: TBD</h3> : <h3>{trip.date}</h3>}
             </article>
           </Link>
         ))}

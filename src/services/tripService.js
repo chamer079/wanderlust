@@ -26,7 +26,17 @@ const show = async (tripId) => {
 
 
 // Create - POST
-
+const create = async (tripFormData) => {
+    try {
+        const res = await fetch(BASE_URL, {
+            method: "POST",
+            body: JSON.stringify(tripFormData)
+        })
+        return res.json()
+    }catch (error) {
+        console.log(error)
+    }
+}
 
 
 // Update - PUT
@@ -40,5 +50,6 @@ const show = async (tripId) => {
 
 export {
     index,
-    show
+    show,
+    create
 }
