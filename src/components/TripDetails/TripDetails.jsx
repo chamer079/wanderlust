@@ -3,30 +3,44 @@ import { useState, useEffect } from "react";
 import * as tripService from "../../services/tripService";
 
 const TripDetails = () => {
-  const { tripId } = useParams();
-  // console.log("tripId:", tripId)
-
-  const [trip, setTrip] = useState(null);
-
-  useEffect(() => {
-    const fetchTrip = async () => {
-      const tripData = await tripService.show(tripId);
-    //   console.log("tipData:", tripData);
-      setTrip(tripData);
+    const { tripId } = useParams();
+    // console.log("tripId:", tripId)
+    
+    const [trip, setTrip] = useState(null);
+    
+    useEffect(() => {
+        const fetchTrip = async () => {
+            const tripData = await tripService.show(tripId);
+            //   console.log("tipData:", tripData);
+            setTrip(tripData);
+        };
+        fetchTrip();
+    }, [tripId]);
+    //   console.log("trip state:", trip);
+    
+    if (!trip) {
+        return <h1>Loading...</h1>;
+    }
+    
+    
+    const imgStyle = {
+        width: "98vw",
+        height: "400px",
+        border: "3px solid red",
     };
-    fetchTrip();
-  }, [tripId]);
-//   console.log("trip state:", trip);
+    // const totalBudget = () => {
+        
+    //         trip.accomendationBudget,
+    //         trip.shoppingBudget,
+    //         trip.entertainmentBudget,
+    //         trip.emergencyBudget
+       
+        
 
-  if (!trip) {
-    return <h1>Loading...</h1>;
-  }
+    //     const total = Object.values.
+    // }
+    // console.log(totalBudget())
 
-  const imgStyle = {
-    width: "98vw",
-    height: "400px",
-    border: "3px solid red",
-  };
 
   return (
     <>
@@ -44,7 +58,7 @@ const TripDetails = () => {
           )}
         </article>
         <article className="budget">
-            <h2>Budget: $</h2>
+            <h2>Budget:$</h2>
             <p>Accomendations: ${!trip.acommendationBudget ? 0 : trip.acommendationBudget}</p>
             <p>Shopping: ${!trip.shoppingBudget ? 0 : trip.shoppingBudget}</p>
             <p>Entertainment: ${!trip.entertainmentBudget ? 0 : trip.entertainmentBudget}</p>
