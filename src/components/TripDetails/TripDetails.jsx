@@ -68,9 +68,9 @@ const TripDetails = () => {
       <section className="todoList">
         <h2>Things to See, Do, & Eat:</h2>
         <>
+        <h3>Sights:</h3>
           {trip.itineraries.map((itinerary) => (
             <article key={itinerary._id} className="sights">
-              <h3>Sights:</h3>
               <ul>
                 {!itinerary.sight ? <p>Add Sights to See</p> : <li>{itinerary.sight}</li>}
               </ul>
@@ -78,9 +78,9 @@ const TripDetails = () => {
           ))}
         </>
         <>
+        <h3>Activities:</h3>
           {trip.itineraries.map((itinerary) => (
             <article key={itinerary._id} className="activities">
-              <h3>Activities:</h3>
               <ul>
                 {!itinerary.activity ? <p>Add Things to Do</p> : <li>{itinerary.activity}</li>}
               </ul>
@@ -88,16 +88,15 @@ const TripDetails = () => {
           ))}
         </>
         <>
+        <h3>Food:</h3>
           {trip.itineraries.map((itinerary) => (
             <article key={itinerary._id} className="food">
-              <h3>Food:</h3>
               <ul>
                 {!itinerary.food ? <p>Add Food to Eat</p> : <li>{itinerary.food}</li>}
               </ul>
             </article>
           ))}
         </>
-          
       </section>
     </>
   );

@@ -1,6 +1,6 @@
 import * as tripService from "./services/tripService"
 import { useState, useEffect } from "react"
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, useNavigate } from "react-router-dom"
 
 import TripList from "./components/TripList/TripList"
 import TripDetails from "./components/TripDetails/TripDetails"

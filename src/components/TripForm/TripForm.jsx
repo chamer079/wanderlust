@@ -31,7 +31,7 @@ const TripForm = (props) => {
     return(
         <>
             <h1>Create a New Trip</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <section className="destinationImg">
                     <label htmlFor="destination-input">Destination:</label>
                     <input 
@@ -106,8 +106,45 @@ const TripForm = (props) => {
                             onChange={handleChange}
                         />
                     </article>
-
-
+                </section>
+                <section className="todoList">
+                    <article className="sightsList">
+                        <label htmlFor="sight-input">Sights:</label>
+                        <textarea 
+                            type="text"
+                            rows={10}
+                            cols={20}
+                            name="sight"
+                            id="sight-input"
+                            value={formData.itineraries.sight}
+                            onChange={handleChange}
+                        />
+                    </article>
+                    <article className="activitiesList">
+                        <label htmlFor="activity-input">Activities:</label>
+                        <textarea 
+                        type="text"
+                        rows={10}
+                        cols={20}
+                        name="activity"
+                        id="activity-input"
+                        value={formData.itineraries.activity}
+                        onChange={handleChange}
+                        />
+                    </article>
+                    <article className="foodList">
+                        <label htmlFor="food-input">Food:</label>
+                        <textarea 
+                            type="text"
+                            rows={10}
+                            cols={20}
+                            name="food"
+                            id="food-input"
+                            value={formData.itineraries.food}
+                            onChange={handleChange}
+                        />
+                    </article>
+                    <button type="submit">Submit</button>
                 </section>
             </form>
         </>
