@@ -8,6 +8,7 @@ import TripForm from "./components/TripForm/TripForm"
 
 const App = () => {
   const [trips, setTrips] = useState([])
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchTrips = async () => {
@@ -18,13 +19,18 @@ const App = () => {
     fetchTrips()
   }, [])
 
+  const handleAddTrip = async (tripFormData) => {
+    console.log("tripFormData: ", tripFormData)
+    navigate("/trips")
+  }
+
   return(
     <>
     <h1>Sanity Check (App.jsx)</h1>
     <Routes>
       <Route path="/trips" element={<TripList trips={trips} />}/>
       <Route path="/trips/:tripId" element={<TripDetails />} />
-      <Route path="/trips/new" element={<TripForm />} />
+      <Route path="/trips/new" element={<TripForm handleAddTrip={handleAddTrip}/>} />
     </Routes>
     </>
   )
