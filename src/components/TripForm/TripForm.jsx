@@ -22,6 +22,7 @@ const TripForm = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         props.handleAddTrip(formData)
+        // console.log("formData: ", formData)
         setFormData({
             destination: "",
             image: "",
@@ -32,8 +33,8 @@ const TripForm = (props) => {
             entertainmentBudget: "",
             emergencyBudget: ""
         })
+        console.log("formData: ", formData)
     }
-    console.log("formData: ", formData)
 
     return(
         <>
@@ -114,46 +115,7 @@ const TripForm = (props) => {
                         />
                     </article>
                 </section>
-                {/* <section className="todoList">
-                    <h3>Things to See, Do, & Eat:</h3>
-                    <article className="sightsList">
-                        <label htmlFor="sight-input">Sights:</label>
-                        <textarea 
-                            type="text"
-                            rows={10}
-                            cols={20}
-                            name="sight"
-                            id="sight-input"
-                            value={formData.itineraries.sight}
-                            onChange={handleChange}
-                        />
-                    </article>
-                    <article className="activitiesList">
-                        <label htmlFor="activity-input">Activities:</label>
-                        <textarea 
-                        type="text"
-                        rows={10}
-                        cols={20}
-                        name="activity"
-                        id="activity-input"
-                        value={formData.itineraries.activity}
-                        onChange={handleChange}
-                        />
-                    </article>
-                    <article className="foodList">
-                        <label htmlFor="food-input">Food:</label>
-                        <textarea 
-                            type="text"
-                            rows={10}
-                            cols={20}
-                            name="food"
-                            id="food-input"
-                            value={formData.itineraries.food}
-                            onChange={handleChange}
-                        />
-                    </article>
-                    </section> */}
-                    <button type="submit">Submit</button>
+                <button type="submit">Submit</button>
             </form>
         </>
     )

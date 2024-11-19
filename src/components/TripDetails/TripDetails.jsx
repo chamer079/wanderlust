@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import * as tripService from "../../services/tripService";
+import ItineraryForm from "../ItineraryForm/ItineraryForm";
 
 const TripDetails = () => {
     const { tripId } = useParams();
@@ -21,13 +22,20 @@ const TripDetails = () => {
     if (!trip) {
         return <h1>Loading...</h1>;
     }
-    
-    
+        
     const imgStyle = {
         width: "98vw",
         height: "400px",
         border: "3px solid red",
     };
+
+    const handleAddItinerary = async (itineraryFormData) => {
+      console.log("itineraryFormData: ", itineraryFormData)
+      const newItinerary = await tripService.createItinerary(tripId, itineraryFormData)
+      setTrip({ ...trip, itineraries: [...trip.itineraries, newItinerary]})
+    }
+  
+  
     // const totalBudget = () => {
         
     //         trip.accomendationBudget,
@@ -66,6 +74,13 @@ const TripDetails = () => {
         </article>
       </section>
       <section className="todoList">
+          <h2>Things to See, do, & Eat</h2>
+          <ItineraryForm  handleAddItinerary={handleAddItinerary}/>
+      </section>
+
+
+
+      {/* <section className="todoList">
         <h2>Things to See, Do, & Eat:</h2>
         <>
         <h3>Sights:</h3>
@@ -97,7 +112,9 @@ const TripDetails = () => {
             </article>
           ))}
         </>
-      </section>
+      </section> */}
+
+      
     </>
   );
 };
