@@ -30,7 +30,10 @@ const create = async (tripFormData) => {
     try {
         const res = await fetch(BASE_URL, {
             method: "POST",
-            body: JSON.stringify(tripFormData)
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(tripFormData),
         })
         return res.json()
     }catch (error) {

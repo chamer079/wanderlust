@@ -21,9 +21,19 @@ const TripForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log("formData: ", formData)
         props.handleAddTrip(formData)
+        setFormData({
+            destination: "",
+            image: "",
+            date: "",
+            duration: "",
+            accomendationBudget: "",
+            shoppingBudget: "",
+            entertainmentBudget: "",
+            emergencyBudget: ""
+        })
     }
+    console.log("formData: ", formData)
 
     return(
         <>
