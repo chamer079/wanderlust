@@ -1,7 +1,7 @@
 import * as tripService from "./services/tripService"
 import { useState, useEffect } from "react"
 import { Routes, Route, useNavigate } from "react-router-dom"
-
+import Landing from "./components/Landing/Landing"
 import TripList from "./components/TripList/TripList"
 import TripDetails from "./components/TripDetails/TripDetails"
 import TripForm from "./components/TripForm/TripForm"
@@ -56,12 +56,13 @@ const App = () => {
 
   return(
     <>
-    <h1>Sanity Check (App.jsx)</h1>
     <Routes>
+      <Route path="/" element={<Landing />} />
       <Route path="/trips" element={<TripList trips={trips} />}/>
       <Route path="/trips/:tripId" element={<TripDetails handleDeleteTrip={handleDeleteTrip}/>} />
       <Route path="/trips/new" element={<TripForm handleAddTrip={handleAddTrip}/>} />
       <Route path="/trips/:tripId/edit" element={<TripForm handleUpdateTrip={handleUpdateTrip} />} />
+      <Route path="*" element={<h2>404 - Something is amis</h2>} />
     </Routes>
     </>
   )
