@@ -28,8 +28,23 @@ const App = () => {
     }catch (error) {
       console.log(error)
     }
-    
-   
+  }
+
+  const handleDeleteTrip = async (tripId) => {
+    // console.log("tripId:", tripId)
+    try{
+      const deletedTrip = await tripService.deleteTrip(tripId)
+      if(deletedTrip.error){
+        throw new Error(deletedTrip.error)
+      }
+
+      setTrips(trips.filter((trip) => trip._id !== deletedTrip))
+      navigate("/trips")
+      console.log(tripId)
+    }catch (error) {
+      console.log(error)
+    }
+
   }
 
   return(
@@ -37,7 +52,7 @@ const App = () => {
     <h1>Sanity Check (App.jsx)</h1>
     <Routes>
       <Route path="/trips" element={<TripList trips={trips} />}/>
-      <Route path="/trips/:tripId" element={<TripDetails />} />
+      <Route path="/trips/:tripId" element={<TripDetails handleDeleteTrip={handleDeleteTrip}/>} />
       <Route path="/trips/new" element={<TripForm handleAddTrip={handleAddTrip}/>} />
     </Routes>
     </>

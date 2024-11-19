@@ -3,56 +3,58 @@ import { useState, useEffect } from "react";
 import * as tripService from "../../services/tripService";
 import ItineraryForm from "../ItineraryForm/ItineraryForm";
 
-const TripDetails = () => {
-    const { tripId } = useParams();
-    // console.log("tripId:", tripId)
-    
-    const [trip, setTrip] = useState(null);
-    
-    useEffect(() => {
-        const fetchTrip = async () => {
-            const tripData = await tripService.show(tripId);
-            //   console.log("tipData:", tripData);
-            setTrip(tripData);
-        };
-        fetchTrip();
-    }, [tripId]);
-    //   console.log("trip state:", trip);
-    
-    if (!trip) {
-        return <h1>Loading...</h1>;
-    }
-        
-    const imgStyle = {
-        width: "98vw",
-        height: "400px",
-        border: "3px solid red",
+const TripDetails = (props) => {
+  const { tripId } = useParams();
+  // console.log("tripId:", tripId)
+
+  const [trip, setTrip] = useState(null);
+
+  useEffect(() => {
+    const fetchTrip = async () => {
+      const tripData = await tripService.show(tripId);
+      //   console.log("tipData:", tripData);
+      setTrip(tripData);
     };
+    fetchTrip();
+  }, [tripId]);
+  //   console.log("trip state:", trip);
 
-    const handleAddItinerary = async (itineraryFormData) => {
-      console.log("itineraryFormData: ", itineraryFormData)
-      const newItinerary = await tripService.createItinerary(tripId, itineraryFormData)
-      setTrip({ ...trip, itineraries: [...trip.itineraries, newItinerary]})
-    }
-  
-  
-    // const totalBudget = () => {
-        
-    //         trip.accomendationBudget,
-    //         trip.shoppingBudget,
-    //         trip.entertainmentBudget,
-    //         trip.emergencyBudget
-       
-        
+  if (!trip) {
+    return <h1>Loading...</h1>;
+  }
 
-    //     const total = Object.values.
-    // }
-    // console.log(totalBudget())
+  const imgStyle = {
+    width: "98vw",
+    height: "400px",
+    border: "3px solid red",
+  };
 
+  const handleAddItinerary = async (itineraryFormData) => {
+    console.log("itineraryFormData: ", itineraryFormData);
+    const newItinerary = await tripService.createItinerary(
+      tripId,
+      itineraryFormData
+    );
+    setTrip({ ...trip, itineraries: [...trip.itineraries, newItinerary] });
+  };
+
+  // const totalBudget = () => {
+
+  //         trip.accomendationBudget,
+  //         trip.shoppingBudget,
+  //         trip.entertainmentBudget,
+  //         trip.emergencyBudget
+
+  //     const total = Object.values.
+  // }
+  // console.log(totalBudget())
 
   return (
     <>
-      <h1>Itinerary for {trip.destination}</h1>
+      <div>
+        <h1>Itinerary for {trip.destination}</h1>
+        <button onClick={() => props.handleDeleteTrip(tripId)}>Delete</button>
+      </div>
       <header>
         <img style={imgStyle} src={trip.image} alt={trip.destination} />
       </header>
@@ -66,56 +68,46 @@ const TripDetails = () => {
           )}
         </article>
         <article className="budget">
-            <h2>Budget:$</h2>
-            <p>Accomendations: ${!trip.acommendationBudget ? 0 : trip.acommendationBudget}</p>
-            <p>Shopping: ${!trip.shoppingBudget ? 0 : trip.shoppingBudget}</p>
-            <p>Entertainment: ${!trip.entertainmentBudget ? 0 : trip.entertainmentBudget}</p>
-            <p>Emergency: ${!trip.emergencyBudget ? 0 : trip.emergencyBudget}</p>
+          <h2>Budget:$</h2>
+          <p>Accomendations: ${!trip.acommendationBudget ? 0 : trip.acommendationBudget}</p>
+          <p>Shopping: ${!trip.shoppingBudget ? 0 : trip.shoppingBudget}</p>
+          <p>Entertainment: ${!trip.entertainmentBudget ? 0 : trip.entertainmentBudget}</p>
+          <p>Emergency: ${!trip.emergencyBudget ? 0 : trip.emergencyBudget}</p>
         </article>
       </section>
       <section className="todoList">
-          <h2>Things to See, do, & Eat</h2>
-          <ItineraryForm  handleAddItinerary={handleAddItinerary}/>
+        <h2>Things to See, do, & Eat</h2>
+        <ItineraryForm handleAddItinerary={handleAddItinerary} />
       </section>
-
-
-
       <section className="todoList">
         <h2>Things to See, Do, & Eat:</h2>
         <>
-        <h3>Sights:</h3>
+          <h3>Sights:</h3>
           {trip.itineraries.map((itinerary) => (
             <article key={itinerary._id} className="sights">
               <ul>
-                {/* {!itinerary.sight ? "" : <li>{itinerary.sight}</li>} */}
                 {itinerary.sight}
               </ul>
             </article>
           ))}
         </>
         <>
-        <h3>Activities:</h3>
+          <h3>Activities:</h3>
           {trip.itineraries.map((itinerary) => (
             <article key={itinerary._id} className="activities">
-              <ul>
-                {itinerary.activity}
-              </ul>
+              <ul>{itinerary.activity}</ul>
             </article>
           ))}
         </>
         <>
-        <h3>Food:</h3>
+          <h3>Food:</h3>
           {trip.itineraries.map((itinerary) => (
             <article key={itinerary._id} className="food">
-              <ul>
-               {itinerary.food}
-              </ul>
+              <ul>{itinerary.food}</ul>
             </article>
           ))}
         </>
       </section>
-
-      
     </>
   );
 };

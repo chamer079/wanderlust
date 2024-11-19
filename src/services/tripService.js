@@ -59,12 +59,23 @@ const createItinerary = async (tripId, itineraryFormData) => {
 }
 
 
+// Delete - DELETE
+const deleteTrip = async (tripId) => {
+    try {
+        const res = await fetch(`${BASE_URL}/${tripId}`, {
+            method: "DELETE",
+        }) 
+        return res.json()
+    }catch (error) {
+        console.log(error)
+    }
+}
+
+
+
 
 // Update - PUT
 
-
-
-// Delete - DELETE
 
 
 
@@ -73,5 +84,6 @@ export {
     index,
     show,
     create, 
-    createItinerary
+    createItinerary,
+    deleteTrip
 }
