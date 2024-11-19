@@ -13,7 +13,7 @@ const App = () => {
   useEffect(() => {
     const fetchTrips = async () => {
       const tripData = await tripService.index()
-      console.log("tripData:", tripData)
+      // console.log("tripData:", tripData)
       setTrips(tripData)
     }
     fetchTrips()
@@ -40,7 +40,7 @@ const App = () => {
 
       setTrips(trips.filter((trip) => trip._id !== deletedTrip))
       navigate("/trips")
-      console.log(tripId)
+      console.log("deletedTrip: ", tripId)
     }catch (error) {
       console.log(error)
     }

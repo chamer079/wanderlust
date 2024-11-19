@@ -1,6 +1,5 @@
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}trips`
 
-
 // Index/Get All - GET
 const index = async () => {
     try {
@@ -11,7 +10,6 @@ const index = async () => {
         return {error: error.message}
     }
 }
-
 
 // Read/Show 1 - GET
 const show = async (tripId) => {
@@ -41,7 +39,6 @@ const create = async (tripFormData) => {
     }
 }
 
-
 // Create Itinerary - POST
 const createItinerary = async (tripId, itineraryFormData) => {
     try {
@@ -58,7 +55,6 @@ const createItinerary = async (tripId, itineraryFormData) => {
     }
 }
 
-
 // Delete - DELETE
 const deleteTrip = async (tripId) => {
     try {
@@ -71,14 +67,7 @@ const deleteTrip = async (tripId) => {
     }
 }
 
-
-
-
 // Update - PUT
-
-
-
-
 
 export {
     index,

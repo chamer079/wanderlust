@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import * as tripService from "../../services/tripService";
 import ItineraryForm from "../ItineraryForm/ItineraryForm";
@@ -53,6 +53,7 @@ const TripDetails = (props) => {
     <>
       <div>
         <h1>Itinerary for {trip.destination}</h1>
+        <Link to={`/trips/${tripId}/edit`}>Update</Link>
         <button onClick={() => props.handleDeleteTrip(tripId)}>Delete</button>
       </div>
       <header>
