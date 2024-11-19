@@ -1,4 +1,6 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useParams} from "react-router-dom"
+import * as tripService from "../../services/tripService"
 
 
 const TripForm = (props) => {
@@ -14,6 +16,9 @@ const TripForm = (props) => {
         
     })
     // console.log(formData)
+
+    const { tripId } = useParams()
+    console.log(tripId)
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -33,12 +38,21 @@ const TripForm = (props) => {
             entertainmentBudget: "",
             emergencyBudget: ""
         })
-        console.log("formData: ", formData)
+        // console.log("formData: ", formData)
     }
+
+    useEffect(() => {
+        const fetchTrip = async () => {
+            const tripData = await tripService.show(tripId)
+            setFormData(tripData)
+            console.log("tripData", tripData)
+        }
+        if(tripId ) fetchTrip()
+    }, [tripId])
 
     return(
         <>
-            <h1>Create a New Trip</h1>
+            <h1>{tripId ? "Update Your Trip" : "Create a New Trip"}</h1>
             <form onSubmit={handleSubmit}>
                 <section className="destinationImg">
                     <label htmlFor="destination-input">Destination:</label>

@@ -54,6 +54,7 @@ const App = () => {
       <Route path="/trips" element={<TripList trips={trips} />}/>
       <Route path="/trips/:tripId" element={<TripDetails handleDeleteTrip={handleDeleteTrip}/>} />
       <Route path="/trips/new" element={<TripForm handleAddTrip={handleAddTrip}/>} />
+      <Route path="/trips/:tripId/edit" element={<TripForm />} />
     </Routes>
     </>
   )
