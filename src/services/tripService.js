@@ -83,11 +83,23 @@ const updateTrip = async (tripId, tripFormData) => {
     }
 }
 
+const deleteItinerary = async (tripId,itineraryId) => {
+    try {
+        const res = await fetch(`${BASE_URL}/${tripId}/itineraries/${itineraryId}`, {
+            method: "DELETE",
+        })
+        return res.json()
+    }catch (error) {
+        console.log(error)
+    }
+}
+
 export {
     index,
     show,
     create, 
     createItinerary,
     deleteTrip,
-    updateTrip
+    updateTrip, 
+    deleteItinerary
 }

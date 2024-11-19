@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-import * as tripService from "../../services/tripService"
 
 const ItineraryForm = (props) => {
   const [formData, setFormData] = useState({
@@ -10,6 +9,7 @@ const ItineraryForm = (props) => {
         food: ""
       }
   });
+  
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -23,6 +23,7 @@ const ItineraryForm = (props) => {
       activity: "", 
       food: "" 
     });
+    
   };
 
   return (

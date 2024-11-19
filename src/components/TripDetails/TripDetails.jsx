@@ -37,7 +37,25 @@ const TripDetails = (props) => {
     );
     setTrip({ ...trip, itineraries: [...trip.itineraries, newItinerary] });
   };
-
+  
+  
+  const handleDeleteItinerary = async (itineraryId) => {
+    console.log("itineraryId", itineraryId)
+    try {
+      const deletedItinerary = await tripService.deleteItinerary(itineraryId)
+      if(deletedItinerary.error){
+        throw new Error(deletedItinerary.error)
+      }
+      setTrip({
+        ...trip,
+        itineraries: trip.itineraries.fileter((itinerary) => itinerary._id !== itineraryId)
+      })
+    }catch (error) {
+      console.log(error)
+    }
+  }
+  handleDeleteItinerary
+  
   // const totalBudget = () => {
 
   //         trip.accomendationBudget,
@@ -88,6 +106,7 @@ const TripDetails = (props) => {
             <article key={itinerary._id} className="sights">
               <ul>
                 {itinerary.sight}
+                <button onClick={() => props.handleDeleteItinerary(itinerary)}>X</button>
               </ul>
             </article>
           ))}
