@@ -44,7 +44,14 @@ const App = () => {
     }catch (error) {
       console.log(error)
     }
+  }
 
+  const handleUpdateTrip = async (tripId, tripFormData) => {
+    console.log("tripId: ", tripId, "tripFormData: ", tripFormData)
+    const updateTrip = await tripService.updateTrip(tripId, tripFormData)
+
+    setTrips(trips.map((trip) => (tripId === trip._id ? updateTrip : trip))) 
+    navigate(`/trips/${tripId}`)
   }
 
   return(
@@ -54,7 +61,7 @@ const App = () => {
       <Route path="/trips" element={<TripList trips={trips} />}/>
       <Route path="/trips/:tripId" element={<TripDetails handleDeleteTrip={handleDeleteTrip}/>} />
       <Route path="/trips/new" element={<TripForm handleAddTrip={handleAddTrip}/>} />
-      <Route path="/trips/:tripId/edit" element={<TripForm />} />
+      <Route path="/trips/:tripId/edit" element={<TripForm handleUpdateTrip={handleUpdateTrip} />} />
     </Routes>
     </>
   )

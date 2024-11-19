@@ -68,11 +68,26 @@ const deleteTrip = async (tripId) => {
 }
 
 // Update - PUT
+const updateTrip = async (tripId, tripFormData) => {
+    try{
+        const res = await fetch(`${BASE_URL}/${tripId}`, {
+            method: "PUT",
+            header: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(tripFormData)
+        })
+        return res.json()
+    }catch (error) {
+        console.log(error)
+    }
+}
 
 export {
     index,
     show,
     create, 
     createItinerary,
-    deleteTrip
+    deleteTrip,
+    updateTrip
 }

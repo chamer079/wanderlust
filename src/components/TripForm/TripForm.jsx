@@ -18,7 +18,7 @@ const TripForm = (props) => {
     // console.log(formData)
 
     const { tripId } = useParams()
-    console.log(tripId)
+    // console.log(tripId)
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -26,7 +26,12 @@ const TripForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        props.handleAddTrip(formData)
+        if(tripId){
+            props.handleUpdateTrip(tripId, formData)
+        }else {
+            props.handleAddTrip(formData)
+        }
+
         // console.log("formData: ", formData)
         setFormData({
             destination: "",
@@ -45,7 +50,7 @@ const TripForm = (props) => {
         const fetchTrip = async () => {
             const tripData = await tripService.show(tripId)
             setFormData(tripData)
-            console.log("tripData", tripData)
+            // console.log("tripData", tripData)
         }
         if(tripId ) fetchTrip()
     }, [tripId])
