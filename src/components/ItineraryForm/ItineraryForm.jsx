@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import * as tripService from "../../services/tripService"
+
 const ItineraryForm = (props) => {
   const [formData, setFormData] = useState({
     itineraries: {
@@ -16,7 +18,11 @@ const ItineraryForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     props.handleAddItinerary(formData)
-    setFormData({ sight: "", activity: "", food: "" });
+    setFormData({ 
+      sight: "", 
+      activity: "", 
+      food: "" 
+    });
   };
 
   return (
@@ -25,7 +31,7 @@ const ItineraryForm = (props) => {
         <h3>Things to See, Do, & Eat:</h3>
         <article className="sightsList">
           <label htmlFor="sight-input">Sights:</label>
-          <textarea
+          <input
             type="text"
             rows={10}
             cols={20}
@@ -37,7 +43,7 @@ const ItineraryForm = (props) => {
         </article>
         <article className="activitiesList">
           <label htmlFor="activity-input">Activities:</label>
-          <textarea
+          <input
             type="text"
             rows={10}
             cols={20}
@@ -49,7 +55,7 @@ const ItineraryForm = (props) => {
         </article>
         <article className="foodList">
           <label htmlFor="food-input">Food:</label>
-          <textarea
+          <input
             type="text"
             rows={10}
             cols={20}

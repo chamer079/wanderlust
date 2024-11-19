@@ -80,14 +80,14 @@ const TripDetails = () => {
 
 
 
-      {/* <section className="todoList">
+      <section className="todoList">
         <h2>Things to See, Do, & Eat:</h2>
         <>
         <h3>Sights:</h3>
           {trip.itineraries.map((itinerary) => (
             <article key={itinerary._id} className="sights">
               <ul>
-                {!itinerary.sight ? <p>Add Sights to See</p> : <li>{itinerary.sight}</li>}
+                {/* {!itinerary.sight ? <p>Add Sights to See</p> : <li>{itinerary.sight}</li>} */}
               </ul>
             </article>
           ))}
@@ -97,7 +97,7 @@ const TripDetails = () => {
           {trip.itineraries.map((itinerary) => (
             <article key={itinerary._id} className="activities">
               <ul>
-                {!itinerary.activity ? <p>Add Things to Do</p> : <li>{itinerary.activity}</li>}
+                {/* {!itinerary.activity ? <p>Add Things to Do</p> : <li>{itinerary.activity}</li>} */}
               </ul>
             </article>
           ))}
@@ -107,12 +107,12 @@ const TripDetails = () => {
           {trip.itineraries.map((itinerary) => (
             <article key={itinerary._id} className="food">
               <ul>
-                {!itinerary.food ? <p>Add Food to Eat</p> : <li>{itinerary.food}</li>}
+                {/* {!itinerary.food ? <p>Add Food to Eat</p> : <li>{itinerary.food}</li>} */}
               </ul>
             </article>
           ))}
         </>
-      </section> */}
+      </section>
 
       
     </>
