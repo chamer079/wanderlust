@@ -7,7 +7,7 @@ const TripDetails = (props) => {
   const { tripId } = useParams();
   // console.log("tripId:", tripId)
 
-  const [trip, setTrip] = useState(null);
+  const [trip, setTrip] = useState();
 
   useEffect(() => {
     const fetchTrip = async () => {
