@@ -45,13 +45,14 @@ const create = async (tripFormData) => {
 // Create Itinerary - POST
 const createItinerary = async (tripId, itineraryFormData) => {
     try {
-        const res = await fetch(`BASE_URL/${tripId}/itineraries`, {
+        const res = await fetch(`${BASE_URL}/${tripId}/itineraries`, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(itineraryFormData),
+            body: JSON.stringify(itineraryFormData)
         })
+        return res.json()
     }catch (error) {
         console.log(error)
     }

@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
-import * as tripService from "../../services/tripService";
 
 const ItineraryForm = (props) => {
   const [formData, setFormData] = useState({
-    itineraries: [
-      {
-        sight: [""],
-        activity: [""],
-        food: [""]
-      },
-    ],
+    itineraries: {
+        sight: "",
+        activity: "",
+        food: ""
+      }
   });
 
   const handleChange = (e) => {
