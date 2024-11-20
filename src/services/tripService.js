@@ -77,6 +77,9 @@ const updateTrip = async (tripId, tripFormData) => {
             },
             body: JSON.stringify(tripFormData)
         })
+        console.log("BASE_URL:", BASE_URL)
+        console.log("tripId:", tripId)
+        // console.log(res.json())
         return res.json()
     }catch (error) {
         console.log(error)

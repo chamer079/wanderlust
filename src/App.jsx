@@ -7,7 +7,7 @@ import TripDetails from "./components/TripDetails/TripDetails"
 import TripForm from "./components/TripForm/TripForm"
 
 const App = () => {
-  const [trips, setTrips] = useState([])
+  const [trips, setTrips] = useState()
   const navigate = useNavigate()
 
   useEffect(() => {
