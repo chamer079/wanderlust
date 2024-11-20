@@ -1,0 +1,10 @@
+body {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+form {
+    border: 2px solid green;
+    /* display: flex; */
+}
+
