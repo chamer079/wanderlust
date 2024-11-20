@@ -48,13 +48,12 @@ const TripDetails = (props) => {
       }
       setTrip({
         ...trip,
-        itineraries: trip.itineraries.fileter((itinerary) => itinerary._id !== itineraryId)
+        itineraries: trip.itineraries.filter((itinerary) => itinerary._id !== itineraryId)
       })
     }catch (error) {
       console.log(error)
     }
   }
-  handleDeleteItinerary
   
   // const totalBudget = () => {
 
@@ -106,7 +105,7 @@ const TripDetails = (props) => {
             <article key={itinerary._id} className="sights">
               <ul>
                 {itinerary.sight}
-                <button onClick={() => props.handleDeleteItinerary(itinerary)}>X</button>
+                <button onClick={() => handleDeleteItinerary(itinerary)}>X</button>
               </ul>
             </article>
           ))}

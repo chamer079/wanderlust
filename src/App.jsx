@@ -40,6 +40,7 @@ const App = () => {
 
       setTrips(trips.filter((trip) => trip._id !== deletedTrip))
       navigate("/trips")
+      window.location.reload()
       console.log("deletedTrip: ", tripId)
     }catch (error) {
       console.log(error)

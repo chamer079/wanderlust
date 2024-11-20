@@ -34,8 +34,6 @@ const ItineraryForm = (props) => {
           <label htmlFor="sight-input">Sights:</label>
           <input
             type="text"
-            rows={10}
-            cols={20}
             name="sight"
             id="sight-input"
             value={formData.sight}
@@ -46,8 +44,6 @@ const ItineraryForm = (props) => {
           <label htmlFor="activity-input">Activities:</label>
           <input
             type="text"
-            rows={10}
-            cols={20}
             name="activity"
             id="acitivity-input"
             value={formData.activity}
@@ -58,8 +54,6 @@ const ItineraryForm = (props) => {
           <label htmlFor="food-input">Food:</label>
           <input
             type="text"
-            rows={10}
-            cols={20}
             name="food"
             id="food-input"
             value={formData.food}
