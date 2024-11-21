@@ -2,15 +2,15 @@
 
 ## Logo
 
-![Wanderlust Logo](./public/images/Trip%20Planning%20Journal.png)
+![Wanderlust Logo](./public/images/Wanderlust-Logo.jpeg)
 
 ## About
 
 Wanderlust is a trip planning app. The user will be able to set a budget. Create a list of sights to see, things to do, and food to eat.
 
-## Deployed Link
+## Front-End Link
 
-TBD
+[Wanderlust deployed link](https://lustrous-syrniki-1f5680.netlify.app)
 
 ## Back-End Link
 
