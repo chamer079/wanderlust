@@ -8,7 +8,7 @@ const HomeLink = () => {
   };
 
   return (
-    <Link to="/trips">
+    <Link className="home-link" to="/trips">
       <img src={HomeButton} style={homeButtonStyle} />
     </Link>
   );
