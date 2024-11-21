@@ -1,0 +1,121 @@
+.trip-details {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  font-size: 22px;
+}
+
+.update-delete {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 20vw;
+}
+
+.update {
+  text-decoration: none;
+  color: #000000;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+.update:hover {
+  color: #911b0c;
+  text-decoration: underline;
+}
+
+.delete {
+  font-size: 26px;
+  border: none;
+  background-color: #f7efe6;
+  letter-spacing: 1px;
+}
+
+.delete:hover {
+  color: #911b0c;
+  text-decoration: underline;
+}
+
+.img-banner {
+  padding-right: 15px;
+}
+
+.time-money {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+
+  margin: 80px 0;
+  width: 90vw;
+}
+
+.date-duration {
+  line-height: 50px;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+.budget {
+  font-size: 24px;
+  letter-spacing: 1px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  background-color: #ddd9d9;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  width: 40vw;
+}
+
+.todo-list {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 25px;
+}
+
+.todo-list-form {
+  border: 2px solid #000000;
+  border-radius: 5px;
+  background-color: #ddd9d9;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.todo-title {
+  padding-left: 25px;
+}
+
+.todo-list-data {
+  display: flex;
+  justify-content: space-evenly;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  background-color: #ddd9d9;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  padding: 20px 0;
+  margin: 80px 0;
+}
+
+.todo-category {
+  padding-left: 38px;
+}
+
+.sights {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  line-height: 7px;
+}
+
+.activities {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  line-height: 7px;
+}
+
+.food {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  line-height: 7px;
+}

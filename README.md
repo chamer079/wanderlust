@@ -6,11 +6,15 @@
 
 ## About
 
-Wanderlust is a trip planning app. The user will be able to set a budget. Keep track of their travel and lodging accomedation information. Create a list for sights to see, things to do, and food to eat.
+Wanderlust is a trip planning app. The user will be able to set a budget. Create a list of sights to see, things to do, and food to eat.
 
 ## Deployed Link
 
 TBD
+
+## Back-End Link
+
+[Wanderlust back-end repo link.](https://github.com/chamer079/wanderlust-back-end)
 
 ## Wireframe
 

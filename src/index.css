@@ -1,0 +1,41 @@
+body {
+  display: flex;
+  background-color: #f7efe6;
+  font-family: "Montserrat", "Nato Sans", "Roboto", sans-serif;
+}
+
+.header {
+  flex-flow: row wrap;
+  width: 98vw;
+  margin-bottom: 80px;
+}
+.home-link {
+  padding-left: 25px;
+}
+
+.header-content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  border-top: 3px solid #302e2e;
+  border-bottom: 3px solid #302e2e;
+}
+
+h1 {
+  font-size: 46px;
+  padding-left: 25px;
+  letter-spacing: 1px;
+}
+
+label {
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+input {
+    background-color: #ddd9d9;
+    border: none;
+    border-bottom: 2px solid #000000;
+    font-size: 22px;
+}
+
