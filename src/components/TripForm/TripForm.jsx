@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import * as tripService from "../../services/tripService";
+import HomeLink from "../HomeLink/HomeLink"
 import "./TripForm.css";
 
 const TripForm = (props) => {
@@ -53,10 +54,16 @@ const TripForm = (props) => {
   }, [tripId]);
 
   return (
-    <>
+    <div className="trip-form">
+      <div className="header">
+        <HomeLink />
+        <div className="header-content">
       <h1>{tripId ? "Update Your Trip" : "Create a New Trip"}</h1>
-      <form onSubmit={handleSubmit}>
+      </div>
+      </div>
+      <form className="create-trip" onSubmit={handleSubmit}>
         <section className="destinationImg">
+          <div className="destination-field">
           <label htmlFor="destination-input">Destination:</label>
           <input
             type="text"
@@ -65,6 +72,8 @@ const TripForm = (props) => {
             value={formData.destination}
             onChange={handleChange}
           />
+          </div>
+          <div className="img-field">
           <label htmlFor="image-input">Image:</label>
           <input
             type="text"
@@ -73,6 +82,7 @@ const TripForm = (props) => {
             value={formData.image}
             onChange={handleChange}
           />
+          </div>
         </section>
         <section className="DateBudget">
           <article className="DateDuration">
@@ -135,7 +145,7 @@ const TripForm = (props) => {
         </section>
         <button type="submit">Submit</button>
       </form>
-    </>
+  </div>
   );
 };
 
