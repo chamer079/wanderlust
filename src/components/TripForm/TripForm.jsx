@@ -174,7 +174,7 @@ const TripForm = (props) => {
             </div>
           </article>
         </section>
-        <button type="submit">Submit</button>
+        <button className="submit-button" type="submit">Submit</button>
       </form>
     </div>
   );

@@ -12,7 +12,9 @@ const TripList = (props) => {
     <div className="trip-list">
       <div className="header">
         <HomeLink />
-        <h1>Places I would like to visit...</h1>
+        <div className="header-content">
+          <h1>Places I would like to visit...</h1>
+        </div>
       </div>
       <div className="cards">
         <Link style={{ textDecoration: "none" }} to="/trips/new">
