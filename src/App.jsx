@@ -68,7 +68,7 @@ const App = () => {
           path="/trips/:tripId/edit"
           element={<TripForm handleUpdateTrip={handleUpdateTrip} />}
         />
-        {/* <Route path="*" element={<h2>404 - Something is amis</h2>} /> */}
+        <Route path="*" element={<h2>404 - Something is amis</h2>} />
       </Routes>
     </>
   );
