@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./ItineraryForm.css"
 
 
 const ItineraryForm = (props) => {
@@ -27,12 +28,12 @@ const ItineraryForm = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <section className="todoList">
-        <h3>Things to See, Do, & Eat:</h3>
-        <article className="sightsList">
-          <label htmlFor="sight-input">Sights:</label>
-          <input
+    <form className="itinerary-form" onSubmit={handleSubmit}>
+      <section className="todo-list-itinerary-form">
+        <article className="sights-list">
+          <label className="todo-label" htmlFor="sight-input">Sights:</label>
+          <input 
+            className="todo-input"
             type="text"
             name="sight"
             id="sight-input"
@@ -40,9 +41,10 @@ const ItineraryForm = (props) => {
             onChange={handleChange}
           />
         </article>
-        <article className="activitiesList">
-          <label htmlFor="activity-input">Activities:</label>
+        <article className="activities-list">
+          <label className="todo-label" htmlFor="activity-input">Activities:</label>
           <input
+            className="todo-input"
             type="text"
             name="activity"
             id="acitivity-input"
@@ -50,9 +52,10 @@ const ItineraryForm = (props) => {
             onChange={handleChange}
           />
         </article>
-        <article className="foodList">
-          <label htmlFor="food-input">Food:</label>
+        <article className="food-list">
+          <label className="todo-label" htmlFor="food-input">Food:</label>
           <input
+            className="todo-input"
             type="text"
             name="food"
             id="food-input"
@@ -61,7 +64,7 @@ const ItineraryForm = (props) => {
           />
         </article>
       </section>
-      <button type="submit">Submit</button>
+      <button className="todo-button" type="submit">+</button>
     </form>
   );
 };

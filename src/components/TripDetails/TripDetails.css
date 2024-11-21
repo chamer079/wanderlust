@@ -56,7 +56,6 @@ h1 {
 .time-money {
     display: flex;
     flex-flow: row wrap;
-    border: 3px solid red;
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
@@ -65,4 +64,21 @@ h1 {
 
 .date-duration {
     line-height: 50px;
+}
+
+.todo-list {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 25px;
+    /* border: 3px solid red; */
+}
+
+.todo-list-form {
+       border: 2px solid #000000;
+       border-radius: 5px;
+       background-color: #ddd9d9;
+}
+
+.todo-title {
+    padding-left: 25px;
 }

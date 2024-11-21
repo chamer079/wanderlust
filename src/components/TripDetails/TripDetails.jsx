@@ -43,8 +43,15 @@ const TripDetails = (props) => {
         <div className="header-content">
           <h1>Itinerary for {trip.destination}</h1>
           <div className="update-delete">
-          <Link className="update" to={`/trips/${tripId}/edit`}>Update</Link>
-          <button className="delete" onClick={() => props.handleDeleteTrip(tripId)}>Delete</button>
+            <Link className="update" to={`/trips/${tripId}/edit`}>
+              Update
+            </Link>
+            <button
+              className="delete"
+              onClick={() => props.handleDeleteTrip(tripId)}
+            >
+              Delete
+            </button>
           </div>
         </div>
       </div>
@@ -74,37 +81,38 @@ const TripDetails = (props) => {
           <p>Emergency: ${!trip.emergencyBudget ? 0 : trip.emergencyBudget}</p>
         </article>
       </section>
-      <section className="todoList">
-        <h2>Things to See, do, & Eat</h2>
-        <ItineraryForm handleAddItinerary={handleAddItinerary} />
-      </section>
-      <section className="todoList">
-        <h2>Things to See, Do, & Eat:</h2>
-        <>
-          <h3>Sights:</h3>
-          {trip.itineraries.map((itinerary) => (
-            <article key={itinerary._id} className="sights">
-              <ul>{itinerary.sight}</ul>
-            </article>
-          ))}
-        </>
-        <>
-          <h3>Activities:</h3>
-          {trip.itineraries.map((itinerary) => (
-            <article key={itinerary._id} className="activities">
-              <ul>{itinerary.activity}</ul>
-            </article>
-          ))}
-        </>
-        <>
-          <h3>Food:</h3>
-          {trip.itineraries.map((itinerary) => (
-            <article key={itinerary._id} className="food">
-              <ul>{itinerary.food}</ul>
-            </article>
-          ))}
-        </>
-      </section>
+      <div className="todo-list">
+        <section className="todo-list-form">
+          <h2 className="todo-title">Things to See, Do, & Eat:</h2>
+          <ItineraryForm handleAddItinerary={handleAddItinerary} />
+        </section>
+        <section className="todo-list-data">
+          <>
+            <h3>Sights:</h3>
+            {trip.itineraries.map((itinerary) => (
+              <article key={itinerary._id} className="sights">
+                <ul>{itinerary.sight}</ul>
+              </article>
+            ))}
+          </>
+          <>
+            <h3>Activities:</h3>
+            {trip.itineraries.map((itinerary) => (
+              <article key={itinerary._id} className="activities">
+                <ul>{itinerary.activity}</ul>
+              </article>
+            ))}
+          </>
+          <>
+            <h3>Food:</h3>
+            {trip.itineraries.map((itinerary) => (
+              <article key={itinerary._id} className="food">
+                <ul>{itinerary.food}</ul>
+              </article>
+            ))}
+          </>
+        </section>
+      </div>
     </div>
   );
 };
