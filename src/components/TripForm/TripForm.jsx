@@ -14,10 +14,8 @@ const TripForm = (props) => {
     entertainmentBudget: "",
     emergencyBudget: "",
   });
-  // console.log(formData)
 
   const { tripId } = useParams();
-  // console.log(tripId)
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,13 +25,12 @@ const TripForm = (props) => {
     e.preventDefault();
     if (tripId) {
       props.handleUpdateTrip(tripId, formData);
-      console.log("tripId:", tripId)
+      console.log("tripId:", tripId);
     } else {
       props.handleAddTrip(formData);
-      console.log("formData: ", formData)
+      console.log("formData: ", formData);
     }
 
-    // console.log("formData: ", formData)
     setFormData({
       destination: "",
       image: "",
@@ -44,14 +41,13 @@ const TripForm = (props) => {
       entertainmentBudget: "",
       emergencyBudget: "",
     });
-    // console.log("formData: ", formData)
   };
 
   useEffect(() => {
     const fetchTrip = async () => {
       const tripData = await tripService.show(tripId);
       setFormData(tripData);
-      console.log("tripData", tripData)
+      console.log("tripData", tripData);
     };
     if (tripId) fetchTrip();
   }, [tripId]);

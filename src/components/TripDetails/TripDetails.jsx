@@ -5,19 +5,16 @@ import ItineraryForm from "../ItineraryForm/ItineraryForm";
 
 const TripDetails = (props) => {
   const { tripId } = useParams();
-  // console.log("tripId:", tripId)
 
   const [trip, setTrip] = useState();
 
   useEffect(() => {
     const fetchTrip = async () => {
       const tripData = await tripService.show(tripId);
-      //   console.log("tipData:", tripData);
       setTrip(tripData);
     };
     fetchTrip();
   }, [tripId]);
-  //   console.log("trip state:", trip);
 
   if (!trip) {
     return <h1>Loading...</h1>;
@@ -30,41 +27,12 @@ const TripDetails = (props) => {
   };
 
   const handleAddItinerary = async (itineraryFormData) => {
-    console.log("itineraryFormData: ", itineraryFormData);
     const newItinerary = await tripService.createItinerary(
       tripId,
       itineraryFormData
     );
     setTrip({ ...trip, itineraries: [...trip.itineraries, newItinerary] });
   };
-  
-  
-  const handleDeleteItinerary = async (itineraryId) => {
-    console.log("itineraryId", itineraryId)
-    try {
-      const deletedItinerary = await tripService.deleteItinerary(itineraryId)
-      if(deletedItinerary.error){
-        throw new Error(deletedItinerary.error)
-      }
-      setTrip({
-        ...trip,
-        itineraries: trip.itineraries.filter((itinerary) => itinerary._id !== itineraryId)
-      })
-    }catch (error) {
-      console.log(error)
-    }
-  }
-  
-  // const totalBudget = () => {
-
-  //         trip.accomendationBudget,
-  //         trip.shoppingBudget,
-  //         trip.entertainmentBudget,
-  //         trip.emergencyBudget
-
-  //     const total = Object.values.
-  // }
-  // console.log(totalBudget())
 
   return (
     <>
@@ -87,9 +55,15 @@ const TripDetails = (props) => {
         </article>
         <article className="budget">
           <h2>Budget:$</h2>
-          <p>Accomendations: ${!trip.acommendationBudget ? 0 : trip.acommendationBudget}</p>
+          <p>
+            Accomendations: $
+            {!trip.acommendationBudget ? 0 : trip.acommendationBudget}
+          </p>
           <p>Shopping: ${!trip.shoppingBudget ? 0 : trip.shoppingBudget}</p>
-          <p>Entertainment: ${!trip.entertainmentBudget ? 0 : trip.entertainmentBudget}</p>
+          <p>
+            Entertainment: $
+            {!trip.entertainmentBudget ? 0 : trip.entertainmentBudget}
+          </p>
           <p>Emergency: ${!trip.emergencyBudget ? 0 : trip.emergencyBudget}</p>
         </article>
       </section>
@@ -103,10 +77,7 @@ const TripDetails = (props) => {
           <h3>Sights:</h3>
           {trip.itineraries.map((itinerary) => (
             <article key={itinerary._id} className="sights">
-              <ul>
-                {itinerary.sight}
-                <button onClick={() => handleDeleteItinerary(itinerary)}>X</button>
-              </ul>
+              <ul>{itinerary.sight}</ul>
             </article>
           ))}
         </>
