@@ -23,9 +23,10 @@ const TripDetails = (props) => {
   }
 
   const imgStyle = {
-    width: "98vw",
+    display: "flex",
+    justifyContent: "center",
+    width: "96vw",
     height: "50vh",
-    border: "3px solid red",
   };
 
   const handleAddItinerary = async (itineraryFormData) => {
@@ -87,30 +88,30 @@ const TripDetails = (props) => {
           <ItineraryForm handleAddItinerary={handleAddItinerary} />
         </section>
         <section className="todo-list-data">
-          <>
-            <h3>Sights:</h3>
+          <div className="sights">
+            <h3 className="todo-category">Sights...</h3>
             {trip.itineraries.map((itinerary) => (
-              <article key={itinerary._id} className="sights">
+              <article key={itinerary._id} >
                 <ul>{itinerary.sight}</ul>
               </article>
             ))}
-          </>
-          <>
-            <h3>Activities:</h3>
+          </div>
+          <div className="activities">
+            <h3 className="todo-category">Activities...</h3>
             {trip.itineraries.map((itinerary) => (
-              <article key={itinerary._id} className="activities">
+              <article key={itinerary._id} >
                 <ul>{itinerary.activity}</ul>
               </article>
             ))}
-          </>
-          <>
-            <h3>Food:</h3>
+          </div>
+          <div className="food">
+            <h3 className="todo-category">Food...</h3>
             {trip.itineraries.map((itinerary) => (
-              <article key={itinerary._id} className="food">
+              <article key={itinerary._id} >
                 <ul>{itinerary.food}</ul>
               </article>
             ))}
-          </>
+          </div>
         </section>
       </div>
     </div>
