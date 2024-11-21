@@ -1,7 +1,9 @@
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import * as tripService from "../../services/tripService";
+import "./TripDetails.css";
 import ItineraryForm from "../ItineraryForm/ItineraryForm";
+import HomeLink from "../HomeLink/HomeLink";
 
 const TripDetails = (props) => {
   const { tripId } = useParams();
@@ -22,7 +24,7 @@ const TripDetails = (props) => {
 
   const imgStyle = {
     width: "98vw",
-    height: "400px",
+    height: "50vh",
     border: "3px solid red",
   };
 
@@ -35,17 +37,22 @@ const TripDetails = (props) => {
   };
 
   return (
-    <>
-      <div>
-        <h1>Itinerary for {trip.destination}</h1>
-        <Link to={`/trips/${tripId}/edit`}>Update</Link>
-        <button onClick={() => props.handleDeleteTrip(tripId)}>Delete</button>
+    <div className="trip-details">
+      <div className="header">
+        <HomeLink />
+        <div className="header-content">
+          <h1>Itinerary for {trip.destination}</h1>
+          <div className="update-delete">
+          <Link className="update" to={`/trips/${tripId}/edit`}>Update</Link>
+          <button className="delete" onClick={() => props.handleDeleteTrip(tripId)}>Delete</button>
+          </div>
+        </div>
       </div>
-      <header>
+      <header className="img-banner">
         <img style={imgStyle} src={trip.image} alt={trip.destination} />
       </header>
-      <section className="timeAndMoney">
-        <article className="dateDuration">
+      <section className="time-money">
+        <article className="date-duration">
           {!trip.date ? <h2>Add a Date</h2> : <h2>Date: {trip.date}</h2>}
           {!trip.duration ? (
             <h2>Add the Duration of the Trip.</h2>
@@ -54,7 +61,7 @@ const TripDetails = (props) => {
           )}
         </article>
         <article className="budget">
-          <h2>Budget:$</h2>
+          <h2>Budget:</h2>
           <p>
             Accomendations: $
             {!trip.acommendationBudget ? 0 : trip.acommendationBudget}
@@ -98,7 +105,7 @@ const TripDetails = (props) => {
           ))}
         </>
       </section>
-    </>
+    </div>
   );
 };
 
