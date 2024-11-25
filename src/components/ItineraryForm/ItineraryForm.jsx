@@ -5,9 +5,8 @@ import "./ItineraryForm.css"
 const ItineraryForm = (props) => {
   const [formData, setFormData] = useState({
     itineraries: {
-        sight: "",
-        activity: "",
-        food: ""
+       text: "",
+       category: "",
       }
   });
   
@@ -20,16 +19,36 @@ const ItineraryForm = (props) => {
     e.preventDefault();
     props.handleAddItinerary(formData)
     setFormData({ 
-      sight: "", 
-      activity: "", 
-      food: "" 
+      text: "",
+      category: "",
     });
     
   };
 
   return (
     <form className="itinerary-form" onSubmit={handleSubmit}>
-      <section className="todo-list-itinerary-form">
+      <label htmlFor="text-input">Todo:</label>
+      <input 
+        type="text"
+        name="text"
+        id="text-input"
+        value={formData.text}
+        onChange={handleChange}
+      />
+      <label htmlFor="category-input">Choose Category:</label>
+      <select
+        name="category"
+        id="category-input"
+        value={formData.category}
+        onChange={handleChange}
+      >
+        <option value="sights">Sights</option>
+        <option value="activities">Activity</option>
+        <option value="food">Food</option>
+      </select>
+
+
+      {/* <section className="todo-list-itinerary-form">
         <article className="sights-list">
           <label className="todo-label" htmlFor="sight-input">Sights:</label>
           <input 
@@ -63,7 +82,7 @@ const ItineraryForm = (props) => {
             onChange={handleChange}
           />
         </article>
-      </section>
+      </section> */}
       <button className="todo-button" type="submit">+</button>
     </form>
   );
