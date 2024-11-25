@@ -88,11 +88,31 @@ const TripDetails = (props) => {
           <ItineraryForm handleAddItinerary={handleAddItinerary} />
         </section>
         <section>
-          <article>
+        <div className="sights">
+            <h3 className="todo-category">Sights...</h3>
             {trip.itineraries.map((itinerary) => (
-              { itinerary.category === "sights" ? <ul key={itinerary._id}>{itinerary.text}</ul> : "" }
+              <article key={itinerary._id} >
+              {itinerary.category === "sights" ? "" : <ul>{itinerary.text}</ul> }  
+              </article>
             ))}
-          </article>
+          </div>
+          <div className="activities">
+            <h3 className="todo-category">Activities...</h3>
+            {trip.itineraries.map((itinerary) => (
+              <article key={itinerary._id} >
+                <ul>{itinerary.text}</ul>
+              </article>
+            ))}
+          </div>
+          <div className="food">
+            <h3 className="todo-category">Food...</h3>
+            {trip.itineraries.map((itinerary) => (
+              <article key={itinerary._id} >
+                <ul>{itinerary.text}</ul>
+              </article>
+            ))}
+          </div>
+
         </section>
 
 
