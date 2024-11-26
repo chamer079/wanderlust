@@ -37,7 +37,6 @@ const TripList = (props) => {
                     src={trip.image}
                     alt={trip.destination}
                   />
-                  
                 </div>
                 <div className="card-content">
                   <h2>{trip.destination}</h2>

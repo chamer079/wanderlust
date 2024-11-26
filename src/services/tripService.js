@@ -1,4 +1,3 @@
-
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}trips`;
 
 const index = async () => {
@@ -77,11 +76,4 @@ const updateTrip = async (tripId, tripFormData) => {
   }
 };
 
-export {
-    index,
-    show,
-    create, 
-    createItinerary,
-    deleteTrip,
-    updateTrip
-}
+export { index, show, create, createItinerary, deleteTrip, updateTrip };

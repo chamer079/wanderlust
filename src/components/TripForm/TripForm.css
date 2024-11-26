@@ -50,7 +50,7 @@ form {
   border-radius: 5px;
   background-color: #ddd9d9;
   width: 85vw;
-  padding: 20px; 
+  padding: 20px;
 }
 
 .budget-categories {
@@ -74,8 +74,8 @@ form {
 
 .submit-button {
   font-size: 40px;
-    border: none;
-    background-color: #f7efe6;
-    padding: 7px 23px;
-    margin: 10px 0 50px;
+  border: none;
+  background-color: #f7efe6;
+  padding: 7px 23px;
+  margin: 10px 0 50px;
 }

@@ -17,9 +17,11 @@ Trip Schema:
 
 ```js
 const tripSchema = new mongoose.Schema({
-  destination: { type: String, required: true },
-  image: { type: String },
-  itineraries: [itinerarySchema],
+  text: { type: String},
+  category{
+    type: String,
+    enum ["sights", "activities", "food"]
+  }
 });
 ```
 

@@ -38,7 +38,7 @@ const TripForm = (props) => {
       image: "",
       date: "",
       duration: "",
-      accomendationBudget: "",
+      accomodationBudget: "",
       shoppingBudget: "",
       entertainmentBudget: "",
       emergencyBudget: "",
@@ -126,14 +126,14 @@ const TripForm = (props) => {
           <article className="budget-categories">
             <div className="accomendation-shopping">
               <div>
-                <label htmlFor="accomendationBudget-input">
+                <label htmlFor="accomodationBudget-input">
                   Accomendations Budget:
                 </label>
                 <input
                   type="number"
-                  name="accomendationBudget"
-                  id="accomendationBudget-input"
-                  value={formData.accomendationBudget}
+                  name="accomodationBudget"
+                  id="accomodationBudget-input"
+                  value={formData.accomodationBudget}
                   onChange={handleChange}
                 />
               </div>
@@ -150,31 +150,33 @@ const TripForm = (props) => {
             </div>
             <div className="entertainment-emergency">
               <div className="entertainment">
-              <label htmlFor="entertainmentBudget-input">
-                Entertainment Budget:
-              </label>
-              <input
-                type="number"
-                name="entertainmentBudget"
-                id="entertainmentBudget-input"
-                value={formData.entertainmentBudget}
-                onChange={handleChange}
-              />
+                <label htmlFor="entertainmentBudget-input">
+                  Entertainment Budget:
+                </label>
+                <input
+                  type="number"
+                  name="entertainmentBudget"
+                  id="entertainmentBudget-input"
+                  value={formData.entertainmentBudget}
+                  onChange={handleChange}
+                />
               </div>
               <div className="emergency">
-              <label htmlFor="emergencyBudget-input">Emergency Budget:</label>
-              <input
-                type="number"
-                name="emergencyBudget"
-                id="emergencyBudget-input"
-                value={formData.emergencyBudget}
-                onChange={handleChange}
-              />
+                <label htmlFor="emergencyBudget-input">Emergency Budget:</label>
+                <input
+                  type="number"
+                  name="emergencyBudget"
+                  id="emergencyBudget-input"
+                  value={formData.emergencyBudget}
+                  onChange={handleChange}
+                />
               </div>
             </div>
           </article>
         </section>
-        <button className="submit-button" type="submit">Submit</button>
+        <button className="submit-button" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );
