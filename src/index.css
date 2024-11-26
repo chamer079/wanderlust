@@ -28,14 +28,13 @@ h1 {
 }
 
 label {
-    font-size: 26px;
-    letter-spacing: 1px;
+  font-size: 26px;
+  letter-spacing: 1px;
 }
 
 input {
-    background-color: #ddd9d9;
-    border: none;
-    border-bottom: 2px solid #000000;
-    font-size: 22px;
+  background-color: #ddd9d9;
+  border: none;
+  border-bottom: 2px solid #000000;
+  font-size: 22px;
 }
-

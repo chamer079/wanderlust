@@ -23,7 +23,6 @@ const TripDetails = (props) => {
   }
 
   const handleAddItinerary = async (itineraryFormData) => {
-    // console.log(itineraryFormData)
     const newItinerary = await tripService.createItinerary(
       tripId,
       itineraryFormData
@@ -92,7 +91,6 @@ const TripDetails = (props) => {
         <section>
           <div className="sights">
             <h3 className="todo-category">Sights...</h3>
-
             {trip.itineraries.map((itinerary) => (
               <article key={itinerary._id}>
                 {itinerary.category === "sights" ? (
