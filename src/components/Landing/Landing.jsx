@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import LandingImg from "../../../public/images/LandingImg.png"
+import LandingImg from "/src/images/LandingImg.png"
 import "./Landing.css"
 
 

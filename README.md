@@ -30,12 +30,16 @@ Thank you to Gemini Generator for creating the logo.
 - Express
 - Node.js
 - React
-- CSS Styling - TBD
 
 ## Next Steps
 
 - Incorporate a third party map API.
   - Color code pins to show trips that one would like to take / bucket list trips, upcoming trips, and trips taken.
 - Incorporate user auth.
+- Create a 'share with...' functionality to be able to share the planning details with your friends.
+- Build out a daily itinerary for the trip.
+- Incorporate 'accomendations' (travel and lodging) to the back-end (schema & controllers) and to the front-end.
+- Incorporate a styling library.
 - Build out the app to include a journal entry section for trips taken.
-  - Include section to upload images and/or short videos.
+  - Include a section for thoughts/expericences during the trip.
+  - Include a section to upload images and/or short videos.

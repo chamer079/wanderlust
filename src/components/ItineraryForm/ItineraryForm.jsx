@@ -1,12 +1,15 @@
 import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import "./ItineraryForm.css"
 
 
 const ItineraryForm = (props) => {
+const navigate = useNavigate()
+const { tripId } = useParams()
+
   const [formData, setFormData] = useState({
     itineraries: {
-       text: "",
-       category: "",
+       text: ""
       }
   });
   
@@ -19,10 +22,9 @@ const ItineraryForm = (props) => {
     e.preventDefault();
     props.handleAddItinerary(formData)
     setFormData({ 
-      text: "",
-      category: "",
+      text: ""
     });
-    
+    navigate(`/trips`)
   };
 
   return (
@@ -46,43 +48,6 @@ const ItineraryForm = (props) => {
         <option value="activities">Activity</option>
         <option value="food">Food</option>
       </select>
-
-
-      {/* <section className="todo-list-itinerary-form">
-        <article className="sights-list">
-          <label className="todo-label" htmlFor="sight-input">Sights:</label>
-          <input 
-            className="todo-input"
-            type="text"
-            name="sight"
-            id="sight-input"
-            value={formData.sight}
-            onChange={handleChange}
-          />
-        </article>
-        <article className="activities-list">
-          <label className="todo-label" htmlFor="activity-input">Activities:</label>
-          <input
-            className="todo-input"
-            type="text"
-            name="activity"
-            id="acitivity-input"
-            value={formData.activity}
-            onChange={handleChange}
-          />
-        </article>
-        <article className="food-list">
-          <label className="todo-label" htmlFor="food-input">Food:</label>
-          <input
-            className="todo-input"
-            type="text"
-            name="food"
-            id="food-input"
-            value={formData.food}
-            onChange={handleChange}
-          />
-        </article>
-      </section> */}
       <button className="todo-button" type="submit">+</button>
     </form>
   );

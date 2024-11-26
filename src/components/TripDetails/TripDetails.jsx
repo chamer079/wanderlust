@@ -92,7 +92,10 @@ const TripDetails = (props) => {
             <h3 className="todo-category">Sights...</h3>
             {trip.itineraries.map((itinerary) => (
               <article key={itinerary._id} >
-              {itinerary.category === "sights" ? "" : <ul>{itinerary.text}</ul> }  
+                {/* if({itinerary.category} === "sights"){
+                  <ul>{itinerary}</ul>
+                } */}
+              {itinerary.category ===  "sights" ? null : <ul>{itinerary.text}</ul> }  
               </article>
             ))}
           </div>

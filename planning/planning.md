@@ -2,7 +2,10 @@
 
 ## User Stories
 
-TBD
+- As a User, I would like to plan for a trip: Destination. Duration of the trip. Budgeting for the trip. Plan out all the things to do, sights to see, food to eat.
+- As a User, I would like to create, update, and delete a trip.
+- As a User, I would like to see all the trips that I would like to go on.
+- As a User, I would like to see the details of one specif trip.
 
 ## Steps/Trello
 
