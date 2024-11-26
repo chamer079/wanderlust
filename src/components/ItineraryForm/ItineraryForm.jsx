@@ -24,7 +24,7 @@ const { tripId } = useParams()
     setFormData({ 
       text: ""
     });
-    navigate(`/trips`)
+    navigate(`/trips/${tripId}`)
   };
 
   return (

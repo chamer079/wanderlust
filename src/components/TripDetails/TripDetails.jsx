@@ -22,6 +22,11 @@ const TripDetails = (props) => {
     return <h1>Loading...</h1>;
   }
 
+  // const sights = () =>  trip.itineraries?.filter((itinerary) => {
+  //   itinerary.category === "sights"
+  // })
+
+
   const imgStyle = {
     display: "flex",
     justifyContent: "center",
@@ -90,11 +95,14 @@ const TripDetails = (props) => {
         <section>
         <div className="sights">
             <h3 className="todo-category">Sights...</h3>
+         
+            {/* {sights.map((sight) => (
+              <article key={sight._id}>
+                <ul>{sight.text}</ul>
+              </article>
+            ))} */}
             {trip.itineraries.map((itinerary) => (
               <article key={itinerary._id} >
-                {/* if({itinerary.category} === "sights"){
-                  <ul>{itinerary}</ul>
-                } */}
               {itinerary.category ===  "sights" ? null : <ul>{itinerary.text}</ul> }  
               </article>
             ))}
@@ -103,6 +111,7 @@ const TripDetails = (props) => {
             <h3 className="todo-category">Activities...</h3>
             {trip.itineraries.map((itinerary) => (
               <article key={itinerary._id} >
+                {}
                 <ul>{itinerary.text}</ul>
               </article>
             ))}
