@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import HomeButton from "../../../public/images/HomeButton.png";
+import HomeButton from "/src/images/HomeButton.png";
 
 const HomeLink = () => {
   const homeButtonStyle = {

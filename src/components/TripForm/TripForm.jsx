@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import * as tripService from "../../services/tripService";
 import HomeLink from "../HomeLink/HomeLink";
-import InsertImgLogo from "../../../public/images/InsertImgLogo.png";
+import InsertImgLogo from "/src/images/InsertImgLogo.png";
 import "./TripForm.css";
 
 const TripForm = (props) => {

@@ -22,19 +22,21 @@ const TripDetails = (props) => {
     return <h1>Loading...</h1>;
   }
 
+  const handleAddItinerary = async (itineraryFormData) => {
+    // console.log(itineraryFormData)
+    const newItinerary = await tripService.createItinerary(
+      tripId,
+      itineraryFormData
+    );
+    console.log(newItinerary);
+    setTrip({ ...trip, ...newItinerary });
+  };
+
   const imgStyle = {
     display: "flex",
     justifyContent: "center",
     width: "96vw",
     height: "50vh",
-  };
-
-  const handleAddItinerary = async (itineraryFormData) => {
-    const newItinerary = await tripService.createItinerary(
-      tripId,
-      itineraryFormData
-    );
-    setTrip({ ...trip, itineraries: [...trip.itineraries, newItinerary] });
   };
 
   return (
@@ -87,28 +89,35 @@ const TripDetails = (props) => {
           <h2 className="todo-title">Things to See, Do, & Eat:</h2>
           <ItineraryForm handleAddItinerary={handleAddItinerary} />
         </section>
-        <section className="todo-list-data">
+        <section>
           <div className="sights">
             <h3 className="todo-category">Sights...</h3>
+
             {trip.itineraries.map((itinerary) => (
-              <article key={itinerary._id} >
-                <ul>{itinerary.sight}</ul>
+              <article key={itinerary._id}>
+                {itinerary.category === "sights" ? (
+                  <ul>{itinerary.text}</ul>
+                ) : null}
               </article>
             ))}
           </div>
           <div className="activities">
             <h3 className="todo-category">Activities...</h3>
             {trip.itineraries.map((itinerary) => (
-              <article key={itinerary._id} >
-                <ul>{itinerary.activity}</ul>
+              <article key={itinerary._id}>
+                {itinerary.category === "activities" ? (
+                  <ul>{itinerary.text}</ul>
+                ) : null}
               </article>
             ))}
           </div>
           <div className="food">
             <h3 className="todo-category">Food...</h3>
             {trip.itineraries.map((itinerary) => (
-              <article key={itinerary._id} >
-                <ul>{itinerary.food}</ul>
+              <article key={itinerary._id}>
+                {itinerary.category === "food" ? (
+                  <ul>{itinerary.text}</ul>
+                ) : null}
               </article>
             ))}
           </div>
