@@ -10,7 +10,7 @@ const { tripId } = useParams()
   const [formData, setFormData] = useState({
   
        text: "",
-       category: ""
+       category: "sights",
     
   });
   
@@ -24,7 +24,7 @@ const { tripId } = useParams()
     props.handleAddItinerary(formData)
     setFormData({ 
       text: "",
-      category: ""
+      category: "sights",
     });
     navigate(`/trips/${tripId}`)
   };
