@@ -35,11 +35,13 @@ const TripDetails = (props) => {
   };
 
   const handleAddItinerary = async (itineraryFormData) => {
+    // console.log(itineraryFormData)
     const newItinerary = await tripService.createItinerary(
       tripId,
       itineraryFormData
     );
-    setTrip({ ...trip, itineraries: [...trip.itineraries, newItinerary] });
+    console.log(newItinerary)
+    setTrip({ ...trip, ...newItinerary });
   };
 
   return (
@@ -103,7 +105,7 @@ const TripDetails = (props) => {
             ))} */}
             {trip.itineraries.map((itinerary) => (
               <article key={itinerary._id} >
-              {itinerary.category ===  "sights" ? null : <ul>{itinerary.text}</ul> }  
+              {itinerary.category ===  "sights" ? <ul>{itinerary.text}</ul> : null }  
               </article>
             ))}
           </div>

@@ -8,9 +8,10 @@ const navigate = useNavigate()
 const { tripId } = useParams()
 
   const [formData, setFormData] = useState({
-    itineraries: {
-       text: ""
-      }
+  
+       text: "",
+       category: ""
+    
   });
   
 
@@ -22,7 +23,8 @@ const { tripId } = useParams()
     e.preventDefault();
     props.handleAddItinerary(formData)
     setFormData({ 
-      text: ""
+      text: "",
+      category: ""
     });
     navigate(`/trips/${tripId}`)
   };
@@ -41,7 +43,6 @@ const { tripId } = useParams()
       <select
         name="category"
         id="category-input"
-        value={formData.category}
         onChange={handleChange}
       >
         <option value="sights">Sights</option>
