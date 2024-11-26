@@ -4,8 +4,8 @@ import HomeLink from "../HomeLink/HomeLink";
 
 const TripList = (props) => {
   const cardImgStyle = {
-    width: "225px",
-    height: "300px",
+    width: "190px",
+    height: "250px",
   };
 
   return (
@@ -16,6 +16,7 @@ const TripList = (props) => {
           <h1>Places I would like to visit...</h1>
         </div>
       </div>
+
       <div className="cards">
         <Link style={{ textDecoration: "none" }} to="/trips/new">
           <article className="new-card">
@@ -32,6 +33,7 @@ const TripList = (props) => {
             >
               <article className="trip-card">
                 <div className="card-img">
+                  
                   <img
                     style={cardImgStyle}
                     src={trip.image}

@@ -17,7 +17,7 @@ h1 {
 .cards {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .new-card {
@@ -25,11 +25,12 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 480px;
-  height: 300px;
+  width: 400px;
+  height: 250px;
   border: 3px dashed #000000;
   border-radius: 5px;
   font-size: 26px;
+  text-align: center;
   color: #000000;
   margin: 42px 0 0 45px;
 }
@@ -42,18 +43,16 @@ h1 {
 .trip-card {
   display: flex;
   flex-flow: row wrap;
-  margin: 40px;
-  justify-content: space-between;
-  align-items: center;
-  width: 480px;
-  height: 300px;
+  width: 400px;
+  height: 250px;
   border: 3px solid #000000;
   border-radius: 5px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
   color: #000000;
   background-color: #ddd9d9;
-  font-size: 22px;
+  font-size: 18px;
   text-align: center;
+  margin: 40px;
 }
 
 .card-content {
@@ -61,6 +60,6 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 225px;
+  width: 210px;
   height: 298px;
 }

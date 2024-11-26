@@ -84,11 +84,9 @@ const TripDetails = (props) => {
         </article>
       </section>
       <div className="todo-list">
-        <section className="todo-list-form">
+        <section className="todo-data">
           <h2 className="todo-title">Things to See, Do, & Eat:</h2>
-          <ItineraryForm handleAddItinerary={handleAddItinerary} />
-        </section>
-        <section>
+          <article className="todo-list-categories">
           <div className="sights">
             <h3 className="todo-category">Sights...</h3>
             {trip.itineraries.map((itinerary) => (
@@ -119,6 +117,10 @@ const TripDetails = (props) => {
               </article>
             ))}
           </div>
+          </article>
+        </section>
+        <section className="todo-list-form">
+          <ItineraryForm handleAddItinerary={handleAddItinerary} />
         </section>
       </div>
     </div>
