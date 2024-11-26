@@ -22,6 +22,13 @@ Wanderlust is a trip planning app. The user will be able to set a budget. Create
 
 ## Attributions
 
+Thank you to the following for sharing such high quality images on [Unsplash](https://unsplash.com/) that were used in this project:
+
+- [Katia De Juan](https://unsplash.com/@katiadejuan) for the [Palacio da Pena, Sintra, Prtugal](https://unsplash.com/photos/gray-and-yellow-castle-at-the-top-of-a-hill-ZQjujHKWcak) photo .
+- [Jonathan Pie](https://unsplash.com/@r3dmax) for the [Icelandic Northern Lights](https://unsplash.com/photos/photography-of-aurora-borealis-7FfG8zcPcXU) photo.
+- [Allan Francis](https://unsplash.com/@allanbenjaminfrancis?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) for the [Woodford Reserve](https://unsplash.com/photos/a-bottle-of-woodford-reserve-sitting-on-a-table-jOEzl0bcXyE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) photo.
+- [Jack Dylag](https://unsplash.com/@dylu?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) for the [Talisker](https://unsplash.com/photos/talisker-bottle-beside-drinking-glass-JwWKV2gCPkE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) photo.
+
 Thank you to Gemini Generator for creating the logo.
 
 ## Technologies & Libraries Used

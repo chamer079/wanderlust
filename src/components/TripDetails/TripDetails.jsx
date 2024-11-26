@@ -73,7 +73,7 @@ const TripDetails = (props) => {
           <h2>Budget:</h2>
           <p>
             Accomendations: $
-            {!trip.acommendationBudget ? 0 : trip.acommendationBudget}
+            {!trip.accomodationBudget ? 0 : trip.accomodationBudget}
           </p>
           <p>Shopping: ${!trip.shoppingBudget ? 0 : trip.shoppingBudget}</p>
           <p>
