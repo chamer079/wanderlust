@@ -1,15 +1,15 @@
 .itinerary-form {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.todo-list-itinerary-form {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  padding: 15px 0 15px;
-  width: 96vw;
+.category-select {
+  font-size: 26px;
+  border: none;
+  background-color: #ddd9d9;
+  padding: 0 10px;
 }
 
 .todo-button {
@@ -18,5 +18,4 @@
   border-radius: 5px;
   background-color: #ddd9d9;
   padding: 7px 23px;
-  margin: 30px 0 30px;
 }

@@ -27,6 +27,7 @@ const ItineraryForm = (props) => {
 
   return (
     <form className="itinerary-form" onSubmit={handleSubmit}>
+      <div className="text-input">
       <label htmlFor="text-input">Todo:</label>
       <input
         type="text"
@@ -35,12 +36,15 @@ const ItineraryForm = (props) => {
         value={formData.text}
         onChange={handleChange}
       />
+      </div>
+      <div className="category-input">
       <label htmlFor="category-input">Choose Category:</label>
-      <select name="category" id="category-input" onChange={handleChange}>
+      <select className="category-select" name="category" id="category-input" onChange={handleChange}>
         <option value="sights">Sights</option>
         <option value="activities">Activity</option>
         <option value="food">Food</option>
       </select>
+      </div>
       <button className="todo-button" type="submit">
         +
       </button>
