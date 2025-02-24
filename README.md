@@ -10,7 +10,7 @@ Wanderlust is a trip planning app. The user will be able to set a budget. Create
 
 ## Front-End Link
 
-[Wanderlust deployed link](https://lustrous-syrniki-1f5680.netlify.app)
+[Wanderlust deployed link](https://wanderlust-mern-stack.netlify.app)
 
 ## Back-End Link
 
