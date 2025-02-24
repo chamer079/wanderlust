@@ -2,7 +2,7 @@
 
 ## Logo
 
-![Wanderlust Logo](./public/images/Wanderlust-Logo.jpeg)
+![Wanderlust Logo](./src/images/Wanderlust-Logo.jpeg)
 
 ## About
 
